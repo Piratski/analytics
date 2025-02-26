@@ -14,7 +14,7 @@ type EventsRateLimiter fiber.Handler
 
 // ProvideEventsRateLimiter is a wire provider for events endpoints rate limiter.
 func ProvideEventsRateLimiter(cfg config.Server, storage storage.Storage) EventsRateLimiter {
-	max := 60
+	max := 10000000
 	if cfg.Debug {
 		max = math.MaxInt
 	}
